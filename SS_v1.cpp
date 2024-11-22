@@ -4,38 +4,51 @@
 
 void drawCircle(float cx, float cy, float radius, float r, float g, float b) {
     glColor3f(r, g, b); // Set circle color
-
-    int x = 0;
-    int y = radius;
-    int d = 1 - radius;
-
     glBegin(GL_TRIANGLE_FAN);
     glVertex2f(cx, cy); // Center of the circle
-
-    while (x <= y) {
-        // Draw the 8 symmetric points of the circle
-        glVertex2f(cx + x, cy + y); // Point 1
-        glVertex2f(cx - x, cy + y); // Point 2
-        glVertex2f(cx + x, cy - y); // Point 3
-        glVertex2f(cx - x, cy - y); // Point 4
-        glVertex2f(cx + y, cy + x); // Point 5
-        glVertex2f(cx - y, cy + x); // Point 6
-        glVertex2f(cx + y, cy - x); // Point 7
-        glVertex2f(cx - y, cy - x); // Point 8
-
-        // Update decision parameter and coordinates
-        if (d < 0) {
-            x++;
-            d += 2 * x + 1;
-        }
-        else {
-            x++;
-            y--;
-            d += 2 * x - 2 * y + 1;
-        }
+    for (int i = 0; i <= 100; ++i) {
+        float angle = i * 2.0f * M_PI / 100; // Divide circle into 100 segments
+        float x = cx + cos(angle) * radius;
+        float y = cy + sin(angle) * radius;
+        glVertex2f(x, y);
     }
     glEnd();
 }
+
+// void drawCircle(float cx, float cy, float radius, float r, float g, float b) {
+//     glColor3f(r, g, b); // Set circle color
+
+//     int x = 0;
+//     int y = radius;
+//     int d = 1 - radius;
+
+//     glBegin(GL_TRIANGLE_FAN);
+//     glVertex2f(cx, cy); // Center of the circle
+
+//     while (x <= y) {
+//         // Draw the 8 symmetric points of the circle
+//         glVertex2f(cx + x, cy + y); // Point 1
+//         glVertex2f(cx - x, cy + y); // Point 2
+//         glVertex2f(cx + x, cy - y); // Point 3
+//         glVertex2f(cx - x, cy - y); // Point 4
+//         glVertex2f(cx + y, cy + x); // Point 5
+//         glVertex2f(cx - y, cy + x); // Point 6
+//         glVertex2f(cx + y, cy - x); // Point 7
+//         glVertex2f(cx - y, cy - x); // Point 8
+
+//         // Update decision parameter and coordinates
+//         if (d < 0) {
+//             x++;
+//             d += 2 * x + 1;
+//         }
+//         else {
+//             x++;
+//             y--;
+//             d += 2 * x - 2 * y + 1;
+//         }
+//     }
+//     glEnd();
+// }
 
 
 void drawSchool() {
@@ -125,6 +138,32 @@ void drawSchool() {
     glVertex2d(1500, 840);
     glEnd();
 
+    // //road background
+    // glBegin(GL_POLYGON);
+    // glColor3f(0.3f, 0.3f, 0.3f);
+    // glVertex2d(0, 0);
+    // glVertex2d(1920, 0);
+    // glVertex2d(1920, 150);
+    // glVertex2d(0, 150);
+    // glEnd();
+    // //road lane divider lines
+    // glLineWidth(5.0f);
+    // glColor3f(1.0f, 1.0f, 1.0f);
+    // glBegin(GL_LINES);
+    // for (int x = 50; x < 1920; x += 100) {
+    //     glVertex2d(x, 75);
+    //     glVertex2d(x + 50, 75);
+    // }
+    // glEnd();
+
+    // // Walk road on the right side
+    // glBegin(GL_POLYGON);
+    // glColor3f(0.6f, 0.6f, 0.6f); // Light gray for the walk road
+    // glVertex2d(0, 150);
+    // glVertex2d(1920, 150);
+    // glVertex2d(1920, 200);
+    // glVertex2d(0, 200);
+    // glEnd();
 
 }
 
@@ -298,7 +337,7 @@ int main(int argc, char** argv) {
 
     glutInitWindowSize(1920, 1080);
     glutInitWindowPosition(0, 0);
-    glutCreateWindow("School Scenario");
+    glutCreateWindow("School Scenario v1");
     glClearColor(0.7f, 0.9f, 1.0f, 1.0f);
     gluOrtho2D(0, 1920, 0, 1080);
     glutDisplayFunc(display);
