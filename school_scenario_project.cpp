@@ -37,6 +37,24 @@ void drawCircle(float cx, float cy, float radius, float r, float g, float b) {
     glEnd();
 }
 
+void drawSun(float cx, float cy, int radius) {
+    // Sun body
+    drawCircle(cx, cy, radius, 1.0f, 1.0f, 0.0f);  // Draw the sun using the circle function
+
+    // Sun rays
+    glColor3f(1.0f, 1.0f, 0.0f);
+    glBegin(GL_LINES);
+    for (int i = 0; i < 360; i += 15) { // Rays every 15 degrees
+        float angle = i * M_PI / 180.0f;
+        float xStart = cx + cos(angle) * (radius + 10); // Start just outside
+        float yStart = cy + sin(angle) * (radius + 10);
+        float xEnd = cx + cos(angle) * (radius + 30);
+        float yEnd = cy + sin(angle) * (radius + 30);
+        glVertex2f(xStart, yStart);
+        glVertex2f(xEnd, yEnd);
+    }
+    glEnd();
+}
 
 void drawSchool() {
 
@@ -276,13 +294,18 @@ void moveableBus() {
     glutPostRedisplay(); // redraw or repeat
 }
 
+
+
+
 void khairul() {
+    drawSun(1800, 1000, 50);
     drawSchool();
     drawRoad();
     drawWalkRoad();
     drawZebraCrossing();
     drawTrafficLight();
     drawBus(x);
+
 }
 
 void display() {
