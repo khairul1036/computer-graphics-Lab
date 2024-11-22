@@ -42,25 +42,56 @@ void drawSun(float cx, float cy, int radius) {
     drawCircle(cx, cy, radius, 1.0f, 1.0f, 0.0f);  // Draw the sun using the circle function
 
     // Sun rays
-    glColor3f(1.0f, 1.0f, 0.0f);
+    glColor3f(1.0f, 1.0f, 0.0f); // Same yellow for the rays
     glBegin(GL_LINES);
-    for (int i = 0; i < 360; i += 15) { // Rays every 15 degrees
-        float angle = i * M_PI / 180.0f;
-        float xStart = cx + cos(angle) * (radius + 10); // Start just outside
-        float yStart = cy + sin(angle) * (radius + 10);
-        float xEnd = cx + cos(angle) * (radius + 30);
-        float yEnd = cy + sin(angle) * (radius + 30);
-        glVertex2f(xStart, yStart);
-        glVertex2f(xEnd, yEnd);
-    }
+    glVertex2f(cx + radius + 10, cy);
+    glVertex2f(cx + radius + 30, cy);
+
+    glVertex2f(cx - radius - 10, cy);
+    glVertex2f(cx - radius - 30, cy);
+
+    glVertex2f(cx, cy + radius + 10);
+    glVertex2f(cx, cy + radius + 30);
+
+    glVertex2f(cx, cy - radius - 10);
+    glVertex2f(cx, cy - radius - 30);
+
+    glVertex2f(cx + 0.707 * (radius + 10), cy + 0.707 * (radius + 10));
+    glVertex2f(cx + 0.707 * (radius + 30), cy + 0.707 * (radius + 30));
+
+    glVertex2f(cx - 0.707 * (radius + 10), cy + 0.707 * (radius + 10));
+    glVertex2f(cx - 0.707 * (radius + 30), cy + 0.707 * (radius + 30));
+
+    glVertex2f(cx + 0.707 * (radius + 10), cy - 0.707 * (radius + 10));
+    glVertex2f(cx + 0.707 * (radius + 30), cy - 0.707 * (radius + 30));
+
+    glVertex2f(cx - 0.707 * (radius + 10), cy - 0.707 * (radius + 10));
+    glVertex2f(cx - 0.707 * (radius + 30), cy - 0.707 * (radius + 30));
+
     glEnd();
+}
+
+void drawCloud(float cx, float cy, float size) {
+    drawCircle(cx, cy, size, 1.0f, 1.0f, 1.0f); // Center
+    drawCircle(cx - size / 2, cy, size / 1.2, 1.0f, 1.0f, 1.0f); // Left
+    drawCircle(cx + size / 2, cy, size / 1.2, 1.0f, 1.0f, 1.0f); // Right
+    drawCircle(cx - size / 3, cy - size / 3, size / 1.5, 1.0f, 1.0f, 1.0f); // Bottom-left
+    drawCircle(cx + size / 3, cy - size / 3, size / 1.5, 1.0f, 1.0f, 1.0f); // Bottom-right
+}
+
+void drawClouds() {
+    drawCloud(100, 1000, 70);  // Cloud 1
+    drawCloud(600, 950, 100); // Cloud 2
+    drawCloud(1000, 850, 90); // Cloud 3
+    drawCloud(1400, 900, 120); // Cloud 4
+    drawCloud(1700, 950, 80); // Cloud 5
 }
 
 void drawSchool() {
 
-    //school- green ground
+    //school-  ground
     glBegin(GL_POLYGON);
-    glColor3f(0.004f, 0.502f, 0.004f);
+    glColor3f(0.2f, 0.2f, 0.0f);
     glVertex2d(0, 0);
     glVertex2d(1920, 0);
     glVertex2d(1920, 600);
@@ -146,6 +177,32 @@ void drawSchool() {
 
 }
 
+void drawTree(float x, float y, float trunkWidth, float trunkHeight, float foliageRadius) {
+    // Draw tree trunk
+    glColor3f(0.4f, 0.2f, 0.0f); // Brown color for the trunk
+    glBegin(GL_POLYGON);
+    glVertex2f(x - trunkWidth / 2, y);                  // Bottom left
+    glVertex2f(x + trunkWidth / 2, y);                  // Bottom right
+    glVertex2f(x + trunkWidth / 2, y + trunkHeight);    // Top right
+    glVertex2f(x - trunkWidth / 2, y + trunkHeight);    // Top left
+    glEnd();
+
+    // Draw foliage (leaves) using multiple overlapping circles
+    glColor3f(0.0f, 0.6f, 0.0f); 
+    drawCircle(x, y + trunkHeight + foliageRadius, foliageRadius, 0.0f, 0.6f, 0.0f);            // Center
+    drawCircle(x - foliageRadius / 2, y + trunkHeight + foliageRadius / 1.5, foliageRadius / 1.2, 0.0f, 0.6f, 0.0f); // Left
+    drawCircle(x + foliageRadius / 2, y + trunkHeight + foliageRadius / 1.5, foliageRadius / 1.2, 0.0f, 0.6f, 0.0f); // Right
+    drawCircle(x, y + trunkHeight + foliageRadius / 2, foliageRadius / 1.5, 0.0f, 0.6f, 0.0f);  // Bottom center
+}
+
+void drawTrees() {
+    drawTree(200, 205, 30, 100, 50);   // Tree 1
+    drawTree(500, 210, 35, 120, 60);   // Tree 2
+    drawTree(800, 220, 40, 110, 70);   // Tree 3
+    drawTree(1200, 200, 30, 100, 50);  // Tree 4
+    drawTree(1600, 215, 35, 115, 55);  // Tree 5
+}
+
 void drawRoad() {
     // Road background
     glBegin(GL_POLYGON);
@@ -168,9 +225,8 @@ void drawRoad() {
 }
 
 void drawWalkRoad() {
-    // Walk road on the right side
     glBegin(GL_POLYGON);
-    glColor3f(0.6f, 0.6f, 0.6f); // Light gray for the walk road
+    glColor3f(0.6f, 0.6f, 0.6f);
     glVertex2d(0, 150);
     glVertex2d(1920, 150);
     glVertex2d(1920, 200);
@@ -294,12 +350,71 @@ void moveableBus() {
     glutPostRedisplay(); // redraw or repeat
 }
 
+void drawLeftRoadBoundary() {
+    glLineWidth(3.0f);
+
+    // Outer boundary lines
+    glColor3f(0.7f, 0.7f, 0.7f);
+    glBegin(GL_LINE_LOOP);
+    glVertex2d(0, 200);  
+    glVertex2d(800, 200); 
+    glVertex2d(800, 300); 
+    glVertex2d(0, 300); 
+    glEnd();
+
+    // Filled middle lines
+    glColor3f(0.7f, 0.7f, 0.7f); 
+    glBegin(GL_QUADS);
+
+    // Fill  the boundary
+    for (int x = 0; x < 800; x += 50) { 
+        glVertex2d(x, 200);      
+        glVertex2d(x + 20, 200);  
+        glVertex2d(x + 20, 300);  
+        glVertex2d(x, 300);
+    }
+
+    glEnd();
+}
+
+void drawRightRoadBoundary() {
+    glLineWidth(3.0f);
+
+    // Outer boundary lines
+    glColor3f(0.7f, 0.7f, 0.7f);
+    glBegin(GL_LINE_LOOP);
+    glVertex2d(1200, 200);  
+    glVertex2d(1920, 200); 
+    glVertex2d(1920, 300); 
+    glVertex2d(1200, 300); 
+    glEnd();
+
+    // Filled middle lines
+    glColor3f(0.7f, 0.7f, 0.7f); 
+    glBegin(GL_QUADS);
+
+    // Fill  the boundary
+    for (int x = 1200; x < 1920; x += 50) { 
+        glVertex2d(x, 200);      
+        glVertex2d(x + 20, 200);  
+        glVertex2d(x + 20, 300);  
+        glVertex2d(x, 300);
+    }
+
+    glEnd();
+}
+
+
 
 
 
 void khairul() {
     drawSun(1800, 1000, 50);
+    drawClouds();
     drawSchool();
+    drawTrees();
+    drawLeftRoadBoundary();
+    drawRightRoadBoundary();
     drawRoad();
     drawWalkRoad();
     drawZebraCrossing();
