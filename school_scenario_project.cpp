@@ -134,6 +134,96 @@ void drawSchool() {
     glVertex2d(700, 860);
     glEnd();
 
+    // Main Building Door rectangle
+    glBegin(GL_POLYGON);
+    glColor3f(0.0f, 0.647f, 0.91f); // Brown color for the door
+    glVertex2d(900, 500);
+    glVertex2d(1000, 500);
+    glVertex2d(1000, 650);
+    glVertex2d(900, 650);
+    glEnd();
+    // Main Building Door border
+    glLineWidth(5.0f); // Set line thickness
+    glColor3f(0.4f, 0.2f, 0.0f);
+    glBegin(GL_LINE_LOOP);
+    glVertex2d(900, 500);
+    glVertex2d(1000, 500);
+    glVertex2d(1000, 650);
+    glVertex2d(900, 650);
+    glEnd();
+
+    // Stairs - Step 1
+    glBegin(GL_POLYGON);
+    glColor3f(0.6f, 0.6f, 0.6f);
+    glVertex2d(830, 520);
+    glVertex2d(1080, 520);
+    glVertex2d(1080, 550);
+    glVertex2d(830, 550);
+    glEnd();
+    // Stairs - Step 1 border
+    glLineWidth(1.0f);
+    glColor3f(0.0f, 0.0f, 0.0f);
+    glBegin(GL_LINE_LOOP);
+    glVertex2d(830, 520);
+    glVertex2d(1080, 520);
+    glVertex2d(1080, 550);
+    glVertex2d(830, 550);
+    glEnd();
+
+    // Stairs - Step 2
+    glBegin(GL_POLYGON);
+    glColor3f(0.7f, 0.7f, 0.7f);
+    glVertex2d(820, 490);
+    glVertex2d(1090, 490);
+    glVertex2d(1090, 520);
+    glVertex2d(820, 520);
+    glEnd();
+    // Stairs - Step 2 border
+    glLineWidth(1.0f);
+    glColor3f(0.0f, 0.0f, 0.0f);
+    glBegin(GL_LINE_LOOP);
+    glVertex2d(820, 490);
+    glVertex2d(1090, 490);
+    glVertex2d(1090, 520);
+    glVertex2d(820, 520);
+    glEnd();
+
+    // Stairs - Step 3
+    glBegin(GL_POLYGON);
+    glColor3f(0.7f, 0.7f, 0.7f);
+    glVertex2d(810, 460);
+    glVertex2d(1100, 460);
+    glVertex2d(1100, 490);
+    glVertex2d(810, 490);
+    glEnd();
+    // Stairs - Step 3 border
+    glLineWidth(1.0f);
+    glColor3f(0.0f, 0.0f, 0.0f);
+    glBegin(GL_LINE_LOOP);
+    glVertex2d(810, 460);
+    glVertex2d(1100, 460);
+    glVertex2d(1100, 490);
+    glVertex2d(810, 490);
+    glEnd();
+
+    // Stairs - road 
+    glBegin(GL_POLYGON);
+    glColor3f(0.4f, 0.4f, 0.4f);
+    glVertex2d(750, 199);
+    glVertex2d(1190, 199);
+    glVertex2d(1100, 460);
+    glVertex2d(810, 460);
+    glEnd();
+    // Stairs - road border
+    glLineWidth(1.0f);
+    glColor3f(0.0f, 0.0f, 0.0f);
+    glBegin(GL_LINE_LOOP);
+    glVertex2d(750, 199);
+    glVertex2d(1190, 199);
+    glVertex2d(1100, 460);
+    glVertex2d(810, 460);
+    glEnd();
+
     //school- left side building
     glBegin(GL_POLYGON);
     glColor3f(1.0f, 0.647f, 0.29f);
@@ -174,6 +264,81 @@ void drawSchool() {
     glVertex2d(1500, 840);
     glEnd();
 
+    // main building divided line
+    glLineWidth(5.0f);
+    glColor3f(0.604f, 0.0f, 0.004f);
+    glBegin(GL_POLYGON);
+    glVertex2d(700, 680);
+    glVertex2d(1200, 680);
+    glVertex2d(1200, 690);
+    glVertex2d(700, 690);
+    glEnd();
+    // main building divided line border
+    glLineWidth(1.0f);
+    glColor3f(0.0f, 0.0f, 0.0f);
+    glBegin(GL_LINE_LOOP);
+    glVertex2d(700, 680);
+    glVertex2d(1200, 680);
+    glVertex2d(1200, 690);
+    glVertex2d(700, 690);
+    glEnd();
+
+    // left building divided line
+    glLineWidth(5.0f);
+    glColor3f(0.604f, 0.0f, 0.004f);
+    glBegin(GL_POLYGON);
+    glVertex2d(100, 680);
+    glVertex2d(400, 680);
+    glVertex2d(400, 690);
+    glVertex2d(100, 690);
+    glEnd();
+    // left building divided line border
+    glLineWidth(1.0f);
+    glColor3f(0.0f, 0.0f, 0.0f);
+    glBegin(GL_LINE_LOOP);
+    glVertex2d(100, 680);
+    glVertex2d(400, 680);
+    glVertex2d(400, 690);
+    glVertex2d(100, 690);
+    glEnd();
+
+    // right building divided line
+    glLineWidth(5.0f);
+    glColor3f(0.604f, 0.0f, 0.004f);
+    glBegin(GL_POLYGON);
+    glVertex2d(1500, 680);
+    glVertex2d(1800, 680);
+    glVertex2d(1800, 690);
+    glVertex2d(1500, 690);
+    glEnd();
+    // right building divided line border
+    glLineWidth(1.0f);
+    glColor3f(0.0f, 0.0f, 0.0f);
+    glBegin(GL_LINE_LOOP);
+    glVertex2d(1500, 680);
+    glVertex2d(1800, 680);
+    glVertex2d(1800, 690);
+    glVertex2d(1500, 690);
+    glEnd();
+
+    // main to right building divided line
+    glLineWidth(5.0f);
+    glColor3f(0.604f, 0.0f, 0.004f);
+    glBegin(GL_POLYGON);
+    glVertex2d(1200, 670);
+    glVertex2d(1500, 670);
+    glVertex2d(1500, 680);
+    glVertex2d(1200, 680);
+    glEnd();
+    // main to right building divided line border
+    glLineWidth(1.0f);
+    glColor3f(0.0f, 0.0f, 0.0f);
+    glBegin(GL_LINE_LOOP);
+    glVertex2d(1200, 670);
+    glVertex2d(1500, 670);
+    glVertex2d(1500, 680);
+    glVertex2d(1200, 680);
+    glEnd();
 
 }
 
@@ -188,7 +353,7 @@ void drawTree(float x, float y, float trunkWidth, float trunkHeight, float folia
     glEnd();
 
     // Draw foliage (leaves) using multiple overlapping circles
-    glColor3f(0.0f, 0.6f, 0.0f); 
+    glColor3f(0.0f, 0.6f, 0.0f);
     drawCircle(x, y + trunkHeight + foliageRadius, foliageRadius, 0.0f, 0.6f, 0.0f);            // Center
     drawCircle(x - foliageRadius / 2, y + trunkHeight + foliageRadius / 1.5, foliageRadius / 1.2, 0.0f, 0.6f, 0.0f); // Left
     drawCircle(x + foliageRadius / 2, y + trunkHeight + foliageRadius / 1.5, foliageRadius / 1.2, 0.0f, 0.6f, 0.0f); // Right
@@ -198,9 +363,10 @@ void drawTree(float x, float y, float trunkWidth, float trunkHeight, float folia
 void drawTrees() {
     drawTree(200, 205, 30, 100, 50);   // Tree 1
     drawTree(500, 210, 35, 120, 60);   // Tree 2
-    drawTree(800, 220, 40, 110, 70);   // Tree 3
+    drawTree(750, 200, 40, 110, 70);   // Tree 3
     drawTree(1200, 200, 30, 100, 50);  // Tree 4
     drawTree(1600, 215, 35, 115, 55);  // Tree 5
+    drawTree(1900, 200, 40, 125, 60);  // Tree 6
 }
 
 void drawRoad() {
@@ -356,21 +522,21 @@ void drawLeftRoadBoundary() {
     // Outer boundary lines
     glColor3f(0.7f, 0.7f, 0.7f);
     glBegin(GL_LINE_LOOP);
-    glVertex2d(0, 200);  
-    glVertex2d(800, 200); 
-    glVertex2d(800, 300); 
-    glVertex2d(0, 300); 
+    glVertex2d(0, 200);
+    glVertex2d(770, 200);
+    glVertex2d(770, 300);
+    glVertex2d(0, 300);
     glEnd();
 
     // Filled middle lines
-    glColor3f(0.7f, 0.7f, 0.7f); 
+    glColor3f(0.7f, 0.7f, 0.7f);
     glBegin(GL_QUADS);
 
     // Fill  the boundary
-    for (int x = 0; x < 800; x += 50) { 
-        glVertex2d(x, 200);      
-        glVertex2d(x + 20, 200);  
-        glVertex2d(x + 20, 300);  
+    for (int x = 0; x < 770; x += 50) {
+        glVertex2d(x, 200);
+        glVertex2d(x + 20, 200);
+        glVertex2d(x + 20, 300);
         glVertex2d(x, 300);
     }
 
@@ -383,21 +549,21 @@ void drawRightRoadBoundary() {
     // Outer boundary lines
     glColor3f(0.7f, 0.7f, 0.7f);
     glBegin(GL_LINE_LOOP);
-    glVertex2d(1200, 200);  
-    glVertex2d(1920, 200); 
-    glVertex2d(1920, 300); 
-    glVertex2d(1200, 300); 
+    glVertex2d(1200, 200);
+    glVertex2d(1920, 200);
+    glVertex2d(1920, 300);
+    glVertex2d(1200, 300);
     glEnd();
 
     // Filled middle lines
-    glColor3f(0.7f, 0.7f, 0.7f); 
+    glColor3f(0.7f, 0.7f, 0.7f);
     glBegin(GL_QUADS);
 
     // Fill  the boundary
-    for (int x = 1200; x < 1920; x += 50) { 
-        glVertex2d(x, 200);      
-        glVertex2d(x + 20, 200);  
-        glVertex2d(x + 20, 300);  
+    for (int x = 1200; x < 1920; x += 50) {
+        glVertex2d(x, 200);
+        glVertex2d(x + 20, 200);
+        glVertex2d(x + 20, 300);
         glVertex2d(x, 300);
     }
 
