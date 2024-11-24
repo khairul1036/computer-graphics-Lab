@@ -340,6 +340,266 @@ void drawSchool() {
     glVertex2d(1200, 680);
     glEnd();
 
+    // left to main building divided line
+    glLineWidth(5.0f);
+    glColor3f(0.604f, 0.0f, 0.004f);
+    glBegin(GL_POLYGON);
+    glVertex2d(400, 670);
+    glVertex2d(700, 670);
+    glVertex2d(700, 680);
+    glVertex2d(400, 680);
+    glEnd();
+    // left to main building divided line border
+    glLineWidth(1.0f);
+    glColor3f(0.0f, 0.0f, 0.0f);
+    glBegin(GL_LINE_LOOP);
+    glVertex2d(400, 670);
+    glVertex2d(700, 670);
+    glVertex2d(700, 680);
+    glVertex2d(400, 680);
+    glEnd();
+
+
+    // start left building windows
+    // bottom side
+    // First window
+    glBegin(GL_POLYGON);
+    glColor3f(0.7f, 0.9f, 1.0f);
+    glVertex2d(150, 550);
+    glVertex2d(200, 550);
+    glVertex2d(200, 630);
+    glVertex2d(150, 630);
+    glEnd();
+
+    glLineWidth(2.0f);
+    glColor3f(0.0f, 0.0f, 0.0f);
+    glBegin(GL_LINE_LOOP);
+    glVertex2d(150, 550);
+    glVertex2d(200, 550);
+    glVertex2d(200, 630);
+    glVertex2d(150, 630);
+    glEnd();
+
+    glLineWidth(1.5f);
+    glBegin(GL_LINES);
+    glVertex2d(175, 550);
+    glVertex2d(175, 630);
+    glEnd();
+
+    glBegin(GL_LINES);
+    glVertex2d(150, 590);
+    glVertex2d(200, 590);
+    glEnd();
+
+    // Second window
+    glBegin(GL_POLYGON);
+    glColor3f(0.7f, 0.9f, 1.0f);
+    glVertex2d(280, 550);
+    glVertex2d(330, 550);
+    glVertex2d(330, 630);
+    glVertex2d(280, 630);
+    glEnd();
+
+    glLineWidth(2.0f);
+    glColor3f(0.0f, 0.0f, 0.0f);
+    glBegin(GL_LINE_LOOP);
+    glVertex2d(280, 550);
+    glVertex2d(330, 550);
+    glVertex2d(330, 630);
+    glVertex2d(280, 630);
+    glEnd();
+
+    glLineWidth(1.5f);
+    glBegin(GL_LINES);
+    glVertex2d(305, 550);
+    glVertex2d(305, 630);
+    glEnd();
+
+    glBegin(GL_LINES);
+    glVertex2d(280, 590);
+    glVertex2d(330, 590);
+    glEnd();
+
+    // top side
+    // First window
+    glBegin(GL_POLYGON);
+    glColor3f(0.7f, 0.9f, 1.0f);
+    glVertex2d(150, 720);
+    glVertex2d(200, 720);
+    glVertex2d(200, 800);
+    glVertex2d(150, 800);
+    glEnd();
+
+    glLineWidth(2.0f);
+    glColor3f(0.0f, 0.0f, 0.0f);
+    glBegin(GL_LINE_LOOP);
+    glVertex2d(150, 720);
+    glVertex2d(200, 720);
+    glVertex2d(200, 800);
+    glVertex2d(150, 800);
+    glEnd();
+
+    glLineWidth(1.5f);
+    glBegin(GL_LINES);
+    glVertex2d(175, 720);
+    glVertex2d(175, 800);
+    glEnd();
+
+    glBegin(GL_LINES);
+    glVertex2d(150, 760);
+    glVertex2d(200, 760);
+    glEnd();
+
+    // Second window
+    glBegin(GL_POLYGON);
+    glColor3f(0.7f, 0.9f, 1.0f);
+    glVertex2d(280, 720);
+    glVertex2d(330, 720);
+    glVertex2d(330, 800);
+    glVertex2d(280, 800);
+    glEnd();
+
+    glLineWidth(2.0f);
+    glColor3f(0.0f, 0.0f, 0.0f);
+    glBegin(GL_LINE_LOOP);
+    glVertex2d(280, 720);
+    glVertex2d(330, 720);
+    glVertex2d(330, 800);
+    glVertex2d(280, 800);
+    glEnd();
+
+    glLineWidth(1.5f);
+    glBegin(GL_LINES);
+    glVertex2d(305, 720);
+    glVertex2d(305, 800);
+    glEnd();
+
+    glBegin(GL_LINES);
+    glVertex2d(280, 760);
+    glVertex2d(330, 760);
+    glEnd();
+    // end left building windows
+
+    // start right building windows
+    // Bottom side
+    // First window
+    glBegin(GL_POLYGON);
+    glColor3f(0.7f, 0.9f, 1.0f);
+    glVertex2d(1550, 550);
+    glVertex2d(1600, 550);
+    glVertex2d(1600, 630);
+    glVertex2d(1550, 630);
+    glEnd();
+
+    glLineWidth(2.0f);
+    glColor3f(0.0f, 0.0f, 0.0f);
+    glBegin(GL_LINE_LOOP);
+    glVertex2d(1550, 550);
+    glVertex2d(1600, 550);
+    glVertex2d(1600, 630);
+    glVertex2d(1550, 630);
+    glEnd();
+
+    glLineWidth(1.5f);
+    glBegin(GL_LINES);
+    glVertex2d(1575, 550);
+    glVertex2d(1575, 630);
+    glEnd();
+
+    glBegin(GL_LINES);
+    glVertex2d(1550, 590);
+    glVertex2d(1600, 590);
+    glEnd();
+
+    // Second window
+    glBegin(GL_POLYGON);
+    glColor3f(0.7f, 0.9f, 1.0f);
+    glVertex2d(1680, 550);
+    glVertex2d(1730, 550);
+    glVertex2d(1730, 630);
+    glVertex2d(1680, 630);
+    glEnd();
+
+    glLineWidth(2.0f);
+    glColor3f(0.0f, 0.0f, 0.0f);
+    glBegin(GL_LINE_LOOP);
+    glVertex2d(1680, 550);
+    glVertex2d(1730, 550);
+    glVertex2d(1730, 630);
+    glVertex2d(1680, 630);
+    glEnd();
+
+    glLineWidth(1.5f);
+    glBegin(GL_LINES);
+    glVertex2d(1705, 550);
+    glVertex2d(1705, 630);
+    glEnd();
+
+    glBegin(GL_LINES);
+    glVertex2d(1680, 590);
+    glVertex2d(1730, 590);
+    glEnd();
+
+    // Top side
+    // First window
+    glBegin(GL_POLYGON);
+    glColor3f(0.7f, 0.9f, 1.0f);
+    glVertex2d(1550, 720);
+    glVertex2d(1600, 720);
+    glVertex2d(1600, 800);
+    glVertex2d(1550, 800);
+    glEnd();
+
+    glLineWidth(2.0f);
+    glColor3f(0.0f, 0.0f, 0.0f);
+    glBegin(GL_LINE_LOOP);
+    glVertex2d(1550, 720);
+    glVertex2d(1600, 720);
+    glVertex2d(1600, 800);
+    glVertex2d(1550, 800);
+    glEnd();
+
+    glLineWidth(1.5f);
+    glBegin(GL_LINES);
+    glVertex2d(1575, 720);
+    glVertex2d(1575, 800);
+    glEnd();
+
+    glBegin(GL_LINES);
+    glVertex2d(1550, 760);
+    glVertex2d(1600, 760);
+    glEnd();
+
+    // Second window
+    glBegin(GL_POLYGON);
+    glColor3f(0.7f, 0.9f, 1.0f);
+    glVertex2d(1680, 720);
+    glVertex2d(1730, 720);
+    glVertex2d(1730, 800);
+    glVertex2d(1680, 800);
+    glEnd();
+
+    glLineWidth(2.0f);
+    glColor3f(0.0f, 0.0f, 0.0f);
+    glBegin(GL_LINE_LOOP);
+    glVertex2d(1680, 720);
+    glVertex2d(1730, 720);
+    glVertex2d(1730, 800);
+    glVertex2d(1680, 800);
+    glEnd();
+
+    glLineWidth(1.5f);
+    glBegin(GL_LINES);
+    glVertex2d(1705, 720);
+    glVertex2d(1705, 800);
+    glEnd();
+
+    glBegin(GL_LINES);
+    glVertex2d(1680, 760);
+    glVertex2d(1730, 760);
+    glEnd();
+    // end right building windows
+
 }
 
 void drawTree(float x, float y, float trunkWidth, float trunkHeight, float foliageRadius) {
