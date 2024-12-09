@@ -1,7 +1,6 @@
 #include <windows.h>
 #include <GL/glut.h>
 #include <cmath>
-#include <ctime>
 
 void drawCircle(float cx, float cy, float radius, float r, float g, float b) {
     glColor3f(r, g, b); // Set circle color
@@ -117,24 +116,6 @@ void drawSchool() {
     glVertex2d(200, 850);
     glEnd();
 
-    //school- full base body
-    glBegin(GL_POLYGON);
-    glColor3f(0.918f, 0.0f, 0.004f);
-    glVertex2d(200, 850);
-    glVertex2d(1700, 850);
-    glVertex2d(1700, 950);
-    glVertex2d(200, 950);
-    glEnd();
-    //school- full base body border
-    glLineWidth(2.0f); // Set the line thickness
-    glBegin(GL_LINE_LOOP);
-    glColor3f(0.604f, 0.0f, 0.004f);
-    glVertex2d(200, 850);
-    glVertex2d(1700, 850);
-    glVertex2d(1700, 950);
-    glVertex2d(200, 950);
-    glEnd();
-
     //school- main building
     glBegin(GL_POLYGON);
     glColor3f(1.0f, 0.647f, 0.29f);
@@ -152,47 +133,6 @@ void drawSchool() {
     glVertex2d(1200, 860);
     glVertex2d(700, 860);
     glEnd();
-
-    // school- main upper full
-    glBegin(GL_POLYGON);
-    glColor3f(0.918f, 0.0f, 0.004f);
-    glVertex2d(695, 850);
-    glVertex2d(1205, 850);
-    glVertex2d(1100, 1000);
-    glVertex2d(800, 1000);
-    glEnd();
-    // school- main upper full border
-    glLineWidth(5.0f); // Set line thickness
-    glColor3f(0.604f, 0.0f, 0.004f);
-    glBegin(GL_LINE_LOOP);
-    glVertex2d(695, 850);
-    glVertex2d(1205, 850);
-    glVertex2d(1100, 1000);
-    glVertex2d(800, 1000);
-    glEnd();
-
-    //school- main building upper
-    glBegin(GL_POLYGON);
-    glColor3f(1.0f, 0.647f, 0.29f);
-    glVertex2d(800, 850);
-    glVertex2d(1100, 850);
-    glVertex2d(950, 1070);
-    glEnd();
-    //school- main building upper border-1
-    glLineWidth(8.0f); // Set the line thickness
-    glBegin(GL_LINE_LOOP);
-    glColor3f(0.604f, 0.0f, 0.004f);
-    glVertex2d(800, 850);
-    glVertex2d(950, 1070);
-    glEnd();
-    //school- main building upper border-2
-    glLineWidth(8.0f); // Set the line thickness
-    glBegin(GL_LINE_LOOP);
-    glColor3f(0.604f, 0.0f, 0.004f);
-    glVertex2d(1100, 850);
-    glVertex2d(950, 1070);
-    glEnd();
-
 
     // Main Building Door rectangle
     glBegin(GL_POLYGON);
@@ -303,20 +243,6 @@ void drawSchool() {
     glVertex2d(250, 1050);
     glVertex2d(100, 840);
     glEnd();
-    //school- left side building upper border-1
-    glLineWidth(8.0f); // Set the line thickness
-    glBegin(GL_LINE_LOOP);
-    glColor3f(0.604f, 0.0f, 0.004f);
-    glVertex2d(100, 840);
-    glVertex2d(250, 1050);
-    glEnd();
-    //school- left side building upper border-2
-    glLineWidth(8.0f); // Set the line thickness
-    glBegin(GL_LINE_LOOP);
-    glColor3f(0.604f, 0.0f, 0.004f);
-    glVertex2d(400, 840);
-    glVertex2d(250, 1050);
-    glEnd();
 
     //school- right side building
     glBegin(GL_POLYGON);
@@ -336,20 +262,6 @@ void drawSchool() {
     glVertex2d(1800, 840);
     glVertex2d(1650, 1050);
     glVertex2d(1500, 840);
-    glEnd();
-    //school- right side building upper border-1
-    glLineWidth(8.0f); // Set the line thickness
-    glBegin(GL_LINE_LOOP);
-    glColor3f(0.604f, 0.0f, 0.004f);
-    glVertex2d(1500, 840);
-    glVertex2d(1650, 1050);
-    glEnd();
-    //school- right side building upper border-2
-    glLineWidth(8.0f); // Set the line thickness
-    glBegin(GL_LINE_LOOP);
-    glColor3f(0.604f, 0.0f, 0.004f);
-    glVertex2d(1800, 840);
-    glVertex2d(1650, 1050);
     glEnd();
 
     // main building divided line
@@ -688,381 +600,6 @@ void drawSchool() {
     glEnd();
     // end right building windows
 
-    // start left to main building windows
-    // Bottom side
-    // First window (450 to 500)
-    glBegin(GL_POLYGON);
-    glColor3f(0.7f, 0.9f, 1.0f);
-    glVertex2d(450, 560);
-    glVertex2d(500, 560);
-    glVertex2d(500, 640);
-    glVertex2d(450, 640);
-    glEnd();
-
-    glLineWidth(2.0f);
-    glColor3f(0.0f, 0.0f, 0.0f);
-    glBegin(GL_LINE_LOOP);
-    glVertex2d(450, 560);
-    glVertex2d(500, 560);
-    glVertex2d(500, 640);
-    glVertex2d(450, 640);
-    glEnd();
-
-    glLineWidth(1.5f);
-    glBegin(GL_LINES);
-    glVertex2d(475, 560);
-    glVertex2d(475, 640);
-    glEnd();
-
-    glBegin(GL_LINES);
-    glVertex2d(450, 600);
-    glVertex2d(500, 600);
-    glEnd();
-
-    // Second window (580 to 630)
-    glBegin(GL_POLYGON);
-    glColor3f(0.7f, 0.9f, 1.0f);
-    glVertex2d(580, 560);
-    glVertex2d(630, 560);
-    glVertex2d(630, 640);
-    glVertex2d(580, 640);
-    glEnd();
-
-    glLineWidth(2.0f);
-    glColor3f(0.0f, 0.0f, 0.0f);
-    glBegin(GL_LINE_LOOP);
-    glVertex2d(580, 560);
-    glVertex2d(630, 560);
-    glVertex2d(630, 640);
-    glVertex2d(580, 640);
-    glEnd();
-
-    glLineWidth(1.5f);
-    glBegin(GL_LINES);
-    glVertex2d(605, 560);
-    glVertex2d(605, 640);
-    glEnd();
-
-    glBegin(GL_LINES);
-    glVertex2d(580, 600);
-    glVertex2d(630, 600);
-    glEnd();
-
-    // Top side
-    // First window (450 to 500)
-    glBegin(GL_POLYGON);
-    glColor3f(0.7f, 0.9f, 1.0f);
-    glVertex2d(450, 720);
-    glVertex2d(500, 720);
-    glVertex2d(500, 800);
-    glVertex2d(450, 800);
-    glEnd();
-
-    glLineWidth(2.0f);
-    glColor3f(0.0f, 0.0f, 0.0f);
-    glBegin(GL_LINE_LOOP);
-    glVertex2d(450, 720);
-    glVertex2d(500, 720);
-    glVertex2d(500, 800);
-    glVertex2d(450, 800);
-    glEnd();
-
-    glLineWidth(1.5f);
-    glBegin(GL_LINES);
-    glVertex2d(475, 720);
-    glVertex2d(475, 800);
-    glEnd();
-
-    glBegin(GL_LINES);
-    glVertex2d(450, 760);
-    glVertex2d(500, 760);
-    glEnd();
-
-    // Second window (580 to 630)
-    glBegin(GL_POLYGON);
-    glColor3f(0.7f, 0.9f, 1.0f);
-    glVertex2d(580, 720);
-    glVertex2d(630, 720);
-    glVertex2d(630, 800);
-    glVertex2d(580, 800);
-    glEnd();
-
-    glLineWidth(2.0f);
-    glColor3f(0.0f, 0.0f, 0.0f);
-    glBegin(GL_LINE_LOOP);
-    glVertex2d(580, 720);
-    glVertex2d(630, 720);
-    glVertex2d(630, 800);
-    glVertex2d(580, 800);
-    glEnd();
-
-    glLineWidth(1.5f);
-    glBegin(GL_LINES);
-    glVertex2d(605, 720);
-    glVertex2d(605, 800);
-    glEnd();
-
-    glBegin(GL_LINES);
-    glVertex2d(580, 760);
-    glVertex2d(630, 760);
-    glEnd();
-    // end left to main building windows
-
-    // start main to right building windows
-// Bottom side
-// First window (1250 to 1300)
-    glBegin(GL_POLYGON);
-    glColor3f(0.7f, 0.9f, 1.0f);
-    glVertex2d(1250, 560);
-    glVertex2d(1300, 560);
-    glVertex2d(1300, 640);
-    glVertex2d(1250, 640);
-    glEnd();
-
-    glLineWidth(2.0f);
-    glColor3f(0.0f, 0.0f, 0.0f);
-    glBegin(GL_LINE_LOOP);
-    glVertex2d(1250, 560);
-    glVertex2d(1300, 560);
-    glVertex2d(1300, 640);
-    glVertex2d(1250, 640);
-    glEnd();
-
-    glLineWidth(1.5f);
-    glBegin(GL_LINES);
-    glVertex2d(1275, 560);
-    glVertex2d(1275, 640);
-    glEnd();
-
-    glBegin(GL_LINES);
-    glVertex2d(1250, 600);
-    glVertex2d(1300, 600);
-    glEnd();
-
-    // Second window (1380 to 1430)
-    glBegin(GL_POLYGON);
-    glColor3f(0.7f, 0.9f, 1.0f);
-    glVertex2d(1380, 560);
-    glVertex2d(1430, 560);
-    glVertex2d(1430, 640);
-    glVertex2d(1380, 640);
-    glEnd();
-
-    glLineWidth(2.0f);
-    glColor3f(0.0f, 0.0f, 0.0f);
-    glBegin(GL_LINE_LOOP);
-    glVertex2d(1380, 560);
-    glVertex2d(1430, 560);
-    glVertex2d(1430, 640);
-    glVertex2d(1380, 640);
-    glEnd();
-
-    glLineWidth(1.5f);
-    glBegin(GL_LINES);
-    glVertex2d(1405, 560);
-    glVertex2d(1405, 640);
-    glEnd();
-
-    glBegin(GL_LINES);
-    glVertex2d(1380, 600);
-    glVertex2d(1430, 600);
-    glEnd();
-
-    // Top side
-    // First window (1350 to 1100)
-    glBegin(GL_POLYGON);
-    glColor3f(0.7f, 0.9f, 1.0f);
-    glVertex2d(1250, 720);
-    glVertex2d(1300, 720);
-    glVertex2d(1300, 800);
-    glVertex2d(1250, 800);
-    glEnd();
-
-    glLineWidth(2.0f);
-    glColor3f(0.0f, 0.0f, 0.0f);
-    glBegin(GL_LINE_LOOP);
-    glVertex2d(1250, 720);
-    glVertex2d(1300, 720);
-    glVertex2d(1300, 800);
-    glVertex2d(1250, 800);
-    glEnd();
-
-    glLineWidth(1.5f);
-    glBegin(GL_LINES);
-    glVertex2d(1275, 720);
-    glVertex2d(1275, 800);
-    glEnd();
-
-    glBegin(GL_LINES);
-    glVertex2d(1250, 760);
-    glVertex2d(1300, 760);
-    glEnd();
-
-    // Second window (1180 to 1230)
-    glBegin(GL_POLYGON);
-    glColor3f(0.7f, 0.9f, 1.0f);
-    glVertex2d(1380, 720);
-    glVertex2d(1430, 720);
-    glVertex2d(1430, 800);
-    glVertex2d(1380, 800);
-    glEnd();
-
-    glLineWidth(2.0f);
-    glColor3f(0.0f, 0.0f, 0.0f);
-    glBegin(GL_LINE_LOOP);
-    glVertex2d(1380, 720);
-    glVertex2d(1430, 720);
-    glVertex2d(1430, 800);
-    glVertex2d(1380, 800);
-    glEnd();
-
-    glLineWidth(1.5f);
-    glBegin(GL_LINES);
-    glVertex2d(1405, 720);
-    glVertex2d(1405, 800);
-    glEnd();
-
-    glBegin(GL_LINES);
-    glVertex2d(1380, 760);
-    glVertex2d(1430, 760);
-    glEnd();
-    // end main to right building windows
-
-    // pilar of main buiding 
-    // main building divided line
-    glLineWidth(5.0f);
-    glColor3f(0.604f, 0.0f, 0.004f);
-    glBegin(GL_POLYGON);
-    glVertex2d(800, 680);
-    glVertex2d(810, 680);
-    glVertex2d(810, 850);
-    glVertex2d(800, 850);
-    glEnd();
-    // main building divided line border
-    glLineWidth(1.0f);
-    glColor3f(0.0f, 0.0f, 0.0f);
-    glBegin(GL_LINE_LOOP);
-    glVertex2d(800, 680);
-    glVertex2d(810, 680);
-    glVertex2d(810, 850);
-    glVertex2d(800, 850);
-    glEnd();
-
-    // main building divided line
-    glLineWidth(5.0f);
-    glColor3f(0.604f, 0.0f, 0.004f);
-    glBegin(GL_POLYGON);
-    glVertex2d(1100, 680);
-    glVertex2d(1110, 680);
-    glVertex2d(1110, 850);
-    glVertex2d(1100, 850);
-    glEnd();
-    // main building divided line border
-    glLineWidth(1.0f);
-    glColor3f(0.0f, 0.0f, 0.0f);
-    glBegin(GL_LINE_LOOP);
-    glVertex2d(1100, 680);
-    glVertex2d(1110, 680);
-    glVertex2d(1110, 850);
-    glVertex2d(1100, 850);
-    glEnd();
-
-    // main building divided line
-    glLineWidth(5.0f);
-    glColor3f(0.604f, 0.0f, 0.004f);
-    glBegin(GL_POLYGON);
-    glVertex2d(850, 680);
-    glVertex2d(860, 680);
-    glVertex2d(860, 550);
-    glVertex2d(850, 550);
-    glEnd();
-    // main building divided line border
-    glLineWidth(1.0f);
-    glColor3f(0.0f, 0.0f, 0.0f);
-    glBegin(GL_LINE_LOOP);
-    glVertex2d(850, 680);
-    glVertex2d(860, 680);
-    glVertex2d(860, 550);
-    glVertex2d(850, 550);
-    glEnd();
-
-    // main building divided line
-    glLineWidth(5.0f);
-    glColor3f(0.604f, 0.0f, 0.004f);
-    glBegin(GL_POLYGON);
-    glVertex2d(1050, 680);
-    glVertex2d(1060, 680);
-    glVertex2d(1060, 550);
-    glVertex2d(1050, 550);
-    glEnd();
-    // main building divided line border
-    glLineWidth(1.0f);
-    glColor3f(0.0f, 0.0f, 0.0f);
-    glBegin(GL_LINE_LOOP);
-    glVertex2d(1050, 680);
-    glVertex2d(1060, 680);
-    glVertex2d(1060, 550);
-    glVertex2d(1050, 550);
-    glEnd();
-
-    // First window
-    glBegin(GL_POLYGON);
-    glColor3f(0.7f, 0.9f, 1.0f); // Light blue color
-    glVertex2d(860, 700);  // Bottom-left corner
-    glVertex2d(920, 700);  // Bottom-right corner
-    glVertex2d(920, 800);  // Top-right corner
-    glVertex2d(860, 800);  // Top-left corner
-    glEnd();
-
-    glLineWidth(2.0f);
-    glColor3f(0.0f, 0.0f, 0.0f); // Black color
-    glBegin(GL_LINE_LOOP);
-    glVertex2d(860, 700);
-    glVertex2d(920, 700);
-    glVertex2d(920, 800);
-    glVertex2d(860, 800);
-    glEnd();
-
-    glLineWidth(1.5f);
-    glBegin(GL_LINES);
-    glVertex2d(890, 700); // Vertical division line
-    glVertex2d(890, 800);
-    glEnd();
-
-    glBegin(GL_LINES);
-    glVertex2d(860, 750); // Horizontal division line
-    glVertex2d(920, 750);
-    glEnd();
-
-    // Second window
-    glBegin(GL_POLYGON);
-    glColor3f(0.7f, 0.9f, 1.0f); // Light blue color
-    glVertex2d(980, 700);  // Bottom-left corner
-    glVertex2d(1040, 700); // Bottom-right corner
-    glVertex2d(1040, 800); // Top-right corner
-    glVertex2d(980, 800);  // Top-left corner
-    glEnd();
-
-    glLineWidth(2.0f);
-    glColor3f(0.0f, 0.0f, 0.0f); // Black color
-    glBegin(GL_LINE_LOOP);
-    glVertex2d(980, 700);
-    glVertex2d(1040, 700);
-    glVertex2d(1040, 800);
-    glVertex2d(980, 800);
-    glEnd();
-
-    glLineWidth(1.5f);
-    glBegin(GL_LINES);
-    glVertex2d(1010, 700); // Vertical division line
-    glVertex2d(1010, 800);
-    glEnd();
-
-    glBegin(GL_LINES);
-    glVertex2d(980, 750); // Horizontal division line
-    glVertex2d(1040, 750);
-    glEnd();
-
 }
 
 void drawTree(float x, float y, float trunkWidth, float trunkHeight, float foliageRadius) {
@@ -1293,72 +830,6 @@ void drawRightRoadBoundary() {
     glEnd();
 }
 
-void drawClock(float x, float y, float radius) {
-    // Get the current time
-    time_t t;
-    struct tm* localTime;
-    time(&t);
-    localTime = localtime(&t);
-
-    // Calculate the angles for the hands
-    float secondAngle = localTime->tm_sec * 6.0f;
-    float minuteAngle = localTime->tm_min * 6.0f + (localTime->tm_sec * 0.1f);
-    float hourAngle = (localTime->tm_hour % 12) * 30.0f + (localTime->tm_min * 0.5f);
-
-    // Draw the clock face (circle)
-    glColor3f(1.0f, 1.0f, 1.0f); // White
-    glBegin(GL_LINE_LOOP);
-    for (int i = 0; i < 360; i++) {
-        float angle = (float)i * 3.14159f / 180.0f;
-        glVertex2f(x + cos(angle) * radius, y + sin(angle) * radius);
-    }
-    glEnd();
-
-    // Draw the numbers (12, 3, 6, 9)
-    glColor3f(0.0f, 0.0f, 0.0f); // Black
-    glRasterPos2f(x - 5.0f, y - radius + 15.0f); glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, '1'); glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, '2');
-    glRasterPos2f(x + radius - 10.0f, y - 5.0f); glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, '3');
-    glRasterPos2f(x - 10.0f, y + radius - 20.0f); glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, '6');
-    glRasterPos2f(x - radius + 5.0f, y - 5.0f); glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, '9');
-
-    // Draw the hands
-    // Hour hand
-    glPushMatrix();
-    glTranslatef(x, y, 0.0f);
-    glRotatef(hourAngle, 0.0f, 0.0f, 1.0f);
-    glLineWidth(6.0f);
-    glColor3f(0.0f, 0.0f, 0.0f);
-    glBegin(GL_LINES);
-    glVertex2f(0.0f, 0.0f);
-    glVertex2f(0.0f, radius * 0.5f);
-    glEnd();
-    glPopMatrix();
-
-    // Minute hand
-    glPushMatrix();
-    glTranslatef(x, y, 0.0f);
-    glRotatef(minuteAngle, 0.0f, 0.0f, 1.0f);
-    glLineWidth(4.0f);
-    glColor3f(0.0f, 0.0f, 0.0f);
-    glBegin(GL_LINES);
-    glVertex2f(0.0f, 0.0f);
-    glVertex2f(0.0f, radius * 0.75f);
-    glEnd();
-    glPopMatrix();
-
-    // Second hand
-    glPushMatrix();
-    glTranslatef(x, y, 0.0f);
-    glRotatef(360.0f - secondAngle, 0.0f, 0.0f, 1.0f);
-    glLineWidth(2.0f);
-    glColor3f(1.0f, 0.0f, 0.0f); // Red for second hand
-    glBegin(GL_LINES);
-    glVertex2f(0.0f, 0.0f);
-    glVertex2f(0.0f, radius);
-    glEnd();
-    glPopMatrix();
-}
-
 void drawRectangle() {
     glBegin(GL_QUADS);
     glColor3f(0.0f, 0.5f, 0.0f);
@@ -1378,7 +849,6 @@ void drawStand() {
     glVertex2d(450, 500);
     glEnd();
 }
-
 void drawGND() {
     glBegin(GL_QUADS);
     glColor3f(0.5f, 0.3f, 0.3f);
@@ -1399,12 +869,13 @@ void drawFlag() {
 void drawPillargnd() {
     glBegin(GL_POLYGON);
     glColor3f(0.4f, 0.4f, 0.4f);
-    glVertex2d(500, 410);
+    glVertex2d(400, 410);
     glVertex2d(50, 410);
     glVertex2d(100, 480);
     glVertex2d(350, 480);
     glEnd();
 }
+
 
 void drawPillar(int x1, int y1, int x2, int y2) {
     glColor3f(0.0f, 0.0f, 0.0f);
@@ -1414,7 +885,6 @@ void drawPillar(int x1, int y1, int x2, int y2) {
     glVertex2d(x2, y2);
     glEnd();
 }
-
 void sohidMinar() {
 
     drawPillargnd();
@@ -1441,75 +911,28 @@ void sohidMinar() {
     drawPillar(270, 580, 320, 650);
     drawPillar(234, 650, 323, 650);
 }
-
 void Drawfootball() {
-    // Draw the field rectangle
     glBegin(GL_POLYGON);
-    glColor3f(0.1f, 0.7f, 0.1f);  // Green color for the field
-    glVertex2d(1200, 480);  // Top-left corner
-    glVertex2d(1700, 480);  // Top-right corner
-    glVertex2d(1800, 300);  // Bottom-right corner
-    glVertex2d(1160, 300);  // Bottom-left corner
-    glEnd();
+    glColor3f(0.5f, 0.4f, 0.4f);
+    glVertex2d(1200, 480);
+    glVertex2d(1700, 480);
 
-    // Draw the field boundary lines (White color)
-    glLineWidth(3.0f);
-    glColor3f(1.0f, 1.0f, 1.0f);  // White color for the boundary
-    glBegin(GL_LINE_LOOP);
-    glVertex2d(1200, 480);  // Top-left corner
-    glVertex2d(1700, 480);  // Top-right corner
-    glVertex2d(1800, 300);  // Bottom-right corner
-    glVertex2d(1160, 300);  // Bottom-left corner
-    glEnd();
+    glVertex2d(1800, 300);
+    glVertex2d(1160, 300);
 
-    // Draw the center line (White)
-    glBegin(GL_LINES);
-    glVertex2d(1450, 480);  // Start of the center line
-    glVertex2d(1450, 300);  // End of the center line (adjusted y-position)
-    glEnd();
-
-    // Draw the center circle (White)
-    float radius = 50.0f;
-    glColor3f(1.0f, 1.0f, 1.0f);  // White color for the center circle
-    glBegin(GL_LINE_LOOP);
-    for (int i = 0; i < 360; i++) {
-        float angle = i * 3.14159f / 180.0f;
-        glVertex2d(1450 + cos(angle) * radius, 390 + sin(angle) * radius);  // Center circle at (1450, 390)
-    }
-    glEnd();
-
-    // Draw the center spot (small circle, White)
-    glBegin(GL_POLYGON);
-    glVertex2d(1450 - 5, 390 - 5);  // Center spot at (1450, 390)
-    glVertex2d(1450 + 5, 390 - 5);
-    glVertex2d(1450 + 5, 390 + 5);
-    glVertex2d(1450 - 5, 390 + 5);
-    glEnd();
-
-    // Draw the penalty areas (White lines)
-    glBegin(GL_LINE_LOOP);
-    glVertex2d(1195, 450);  // Left penalty area top-left
-    glVertex2d(1270, 450);  // Left penalty area top-right
-    glVertex2d(1280, 360);  // Left penalty area bottom-right
-    glVertex2d(1170, 360);  // Left penalty area bottom-left
-    glEnd();
-
-    glBegin(GL_LINE_LOOP);
-    glVertex2d(1715, 450);  // Right penalty area top-left
-    glVertex2d(1640, 450);  // Right penalty area top-right
-    glVertex2d(1660, 360);  // Right penalty area bottom-right
-    glVertex2d(1765, 360);  // Right penalty area bottom-left
     glEnd();
 }
 
-void display() {
-    glClear(GL_COLOR_BUFFER_BIT);
 
+void ishtiaque() {
+    drawFlag();
+    sohidMinar();
+    Drawfootball();
+}
+void khairul() {
     drawSun(1800, 1000, 50);
     drawClouds();
     drawSchool();
-    sohidMinar();
-    Drawfootball();
     drawTrees();
     drawLeftRoadBoundary();
     drawRightRoadBoundary();
@@ -1518,8 +941,14 @@ void display() {
     drawZebraCrossing();
     drawTrafficLight();
     drawBus(x);
-    drawFlag();
-    drawClock(950.0f, 950.0f, 45.0f);
+
+}
+
+void display() {
+    glClear(GL_COLOR_BUFFER_BIT);
+
+    khairul();
+    ishtiaque();
 
     glFlush();
 }
